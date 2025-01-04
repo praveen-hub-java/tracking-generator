@@ -1,6 +1,6 @@
 # Start with a base image containing Java runtime
 FROM openjdk:17-jdk-slim
-FROM maven:3.8.4-openjdk-11-slim
+#FROM maven:3.8.4-openjdk-17-slim
 
 
 
@@ -14,12 +14,12 @@ VOLUME /tmp
 EXPOSE 8080
 
 # Copy the pom.xml and the project files to the container
-COPY pom.xml .
-COPY src ./src
+#COPY pom.xml .
+#COPY src ./src
 
-RUN mvn clean install -DskipTests
+#RUN mvn clean install -DskipTests
 # The application's jar file
-ARG JAR_FILE=target/generator-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE=target/generator-1.0.jar
 
 # Add the application's jar to the container
 ADD ${JAR_FILE} app.jar
