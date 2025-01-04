@@ -56,7 +56,7 @@ Sample Response will be  like below.
     "created_at": "2025-01-04T14:07:55.744+00:00"
 }
 
-#Improvements:
+***** #Improvements: Can be Done *****
 For this application below are things that we can add later or provided some time.
 
 1. We can store all these request params to Database, as of now storing only generated numbers with time , but in future we can have user mapping to 
@@ -72,3 +72,7 @@ With some load balancing tools also we can alternative mechanism for this.
 5. We can push artifacts to artifact repo (like  nexus, dockerHub ), and thn we can directly download the artifacts in client system so that it will contain everyting needed to acess this service.
 
 6. In similar way we can also have this deployed at some cloud service domain(SAAS based), so that multiple tenants can have thier own dashboard(with some configurations needed for this).
+
+7. We can have CI/CD config to have blue green pipeline model.
+8. We can sonarqube  integration to have code coverage check at the time of build .
+9. We can Code scan tools (like jacoco, VulnTest).
