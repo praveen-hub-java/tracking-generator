@@ -76,3 +76,8 @@ With some load balancing tools also we can alternative mechanism for this.
 7. We can have CI/CD config to have blue green pipeline model.
 8. We can sonarqube  integration to have code coverage check at the time of build .
 9. We can Code scan tools (like jacoco, VulnTest).
+
+
+**** This solution is currently deployed at below url, or now authentication is not there(added this as part of improvements can done).
+http://35.223.16.31:8080/next-tracking-number?origin_country_id=IN&destination_country_id=MY&weight=1.322&customer_id=1001&customer_name=praveen&customer_slug=PraveeN&created_at=2018-11-20T19:29:32+08:00
+![image](https://github.com/user-attachments/assets/48a12dd2-a36b-4616-ae98-bc7034288355)
