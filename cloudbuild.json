@@ -1,0 +1,36 @@
+{
+  "steps": [
+  {
+    "name": "gcr.io/cloud-builders/docker",
+    "entrypoint": "bash",
+    "args": [
+      "-c",
+      "docker login --username=$$USERNAME --password=$$PASSWORD"
+    ],
+    "secretEnv": [
+      "USERNAME",
+      "PASSWORD"
+    ]
+  },
+  {
+    "name": "gcr.io/cloud-builders/docker",
+    "entrypoint": "bash",
+    "args": [
+      "-c",
+      "docker run $$USERNAME/praveendockerhubtest/generator-container:generator-1.0"
+     ],
+     "secretEnv": [
+      "USERNAME"
+    ]
+  }
+  ],
+  "availableSecrets": {
+    "secretManager": [{
+      "versionName": "projects/rational-moon-446814-a6/secrets/praveendockerhubtest/versions/1",
+      "env": "PASSWORD"
+  }, {
+    "versionName": "projects/rational-moon-446814-a6/secrets/praveendockerhubtest/versions/1",
+    "env": "USERNAME"
+     }]
+  }
+}
