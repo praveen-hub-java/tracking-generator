@@ -19,10 +19,10 @@ EXPOSE 8080
 
 #RUN mvn clean install -DskipTests
 # The application's jar file
-ARG JAR_FILE=target/generator-1.0.jar
+ARG JAR_FILE=target/generator-1.0.war
 
 # Add the application's jar to the container
 ADD ${JAR_FILE} app.jar
 
 # Run the jar file
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.war"]
