@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: tracking
+
+  r2dbc:
+    url: r2dbc:mysql://localhost:3306/trackingdb?useServerPrepStmts=true&zeroDate=use_round&sslMode=DISABLED
+    username: root
+    password: password
+
+  datasource:
+    driver-class-name: dev.miku.r2dbc.mysql.MySqlConnectionFactoryProvider
+
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false

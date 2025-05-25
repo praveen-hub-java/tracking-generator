@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8
+    environment:
+      MYSQL_DATABASE: trackingdb
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  tracking-generator:
+    image: tracking-generator:latest
+    build:
+      context: .
+    depends_on:
+      - mysql
+    environment:
+      SPRING_R2DBC_URL: r2dbc:mysql://mysql:3306/trackingdb
+      SPRING_R2DBC_USERNAME: root
+      SPRING_R2DBC_PASSWORD: password
+    ports:
+      - "8080:8080"
+    deploy:
+      replicas: 3
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+    restart: always
+
+volumes:
+  db_data:
